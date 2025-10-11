@@ -297,12 +297,26 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Styled with inspiration from modern UI/UX principles
 - Powered by [D3.js](https://d3js.org/) for data manipulation
 
-## Support
+## 🙋‍♂️ Get Involved
 
 For issues, questions, or suggestions:
 - Open an issue on [GitHub](https://github.com/markusbegerow/powerbi-navigation-menu/issues)
 - Check existing issues for solutions
 - Provide detailed reproduction steps for bugs
+
+## ☕ Support the Project
+
+If you like this project, support further development with a repost or coffee:
+
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/MarkusBegerow/powerbi-navigation-menu" target="_blank"> <img src="https://img.shields.io/badge/💼-Share%20on%20LinkedIn-blue" /> </a>
+
+[![Buy Me a Coffee](https://img.shields.io/badge/☕-Buy%20me%20a%20coffee-yellow)](https://paypal.me/MarkusBegerow?country.x=DE&locale.x=de_DE)
+
+## 📬 Contact
+
+- 🧑‍💻 [Markus Begerow](https://linkedin.com/in/markusbegerow)
+- 💾 [GitHub](https://github.com/markusbegerow)
+- ✉️ [Twitter](https://x.com/markusbegerow)
 
 ---
 
