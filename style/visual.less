@@ -1,0 +1,375 @@
+/* Burger Menu Visual Styles */
+
+.burger-menu-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Burger Button */
+.burger-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        background-color: #555;
+    }
+
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 200;
+
+    &.visible {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+/* Menu Panel */
+.menu-panel {
+    position: fixed;
+    top: 0;
+    left: -380px;
+    width: 380px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    z-index: 300;
+    overflow-y: auto;
+
+    &.open {
+        left: 0;
+    }
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    line-height: 1;
+
+    &:hover {
+        background-color: #555;
+    }
+}
+
+/* Menu Content */
+.menu-content {
+    padding: 70px 20px 20px 20px;
+
+    h3 {
+        margin: 0 0 20px 0;
+        font-size: 22px;
+        color: #333;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+        font-weight: 600;
+    }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+
+    .empty-icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+        color: #ddd;
+    }
+
+    p {
+        margin: 10px 0;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .empty-instruction {
+        font-size: 12px;
+        color: #999;
+        font-style: italic;
+    }
+}
+
+/* Filter Section */
+.filter-section {
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fafafa;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.collapsible-header {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        background-color: #ebebeb;
+    }
+}
+
+.collapse-icon {
+    display: inline-block;
+    width: 16px;
+    margin-right: 8px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.expand-icon {
+    font-size: 12px;
+    color: #666;
+    transition: transform 0.2s ease;
+}
+
+.filter-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    flex: 1;
+}
+
+.clear-button {
+    background: none;
+    border: none;
+    color: #2196F3;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: rgba(33, 150, 243, 0.1);
+    }
+}
+
+.filter-search {
+    width: calc(100% - 30px);
+    margin: 10px 15px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+        border-color: #2196F3;
+    }
+
+    &::placeholder {
+        color: #aaa;
+    }
+}
+
+.filter-values {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 5px 10px 10px 10px;
+}
+
+.filter-value-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    margin: 2px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    background-color: #fff;
+
+    &:hover {
+        background-color: #e3f2fd;
+    }
+
+    &.selected {
+        background-color: #e8f4f8;
+        border-left: 3px solid #2196F3;
+    }
+}
+
+.filter-checkbox {
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.filter-value-label {
+    font-size: 13px;
+    color: #333;
+    user-select: none;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.no-results {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Hierarchy Tree Styles */
+.hierarchy-tree {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.hierarchy-node {
+    margin: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.hierarchy-node-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px 6px 0;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+    max-width: 100%;
+    overflow: hidden;
+
+    &:hover {
+        background-color: #e3f2fd;
+    }
+}
+
+.hierarchy-expand-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    font-size: 10px;
+    color: #666;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    line-height: 16px;
+    flex-shrink: 0;
+
+    &:hover {
+        color: #2196F3;
+    }
+}
+
+.hierarchy-expand-spacer {
+    display: inline-block;
+    width: 16px;
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.hierarchy-node-item .filter-checkbox {
+    margin: 0 8px 0 0;
+    flex-shrink: 0;
+}
+
+.hierarchy-node-item .filter-value-label {
+    flex: 1;
+    font-size: 13px;
+    user-select: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+/* Scrollbar styling */
+.filter-values::-webkit-scrollbar,
+.menu-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.filter-values::-webkit-scrollbar-track,
+.menu-panel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.filter-values::-webkit-scrollbar-thumb,
+.menu-panel::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+
+    &:hover {
+        background: #aaa;
+    }
+}

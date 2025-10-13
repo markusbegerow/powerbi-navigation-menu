@@ -1,0 +1,86 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Filters",
+            "name": "filters",
+            "kind": "Grouping"
+        }
+    ],
+    "objects": {
+        "menu": {
+            "displayName": "Menu Settings",
+            "properties": {
+                "menuPosition": {
+                    "displayName": "Menu Position",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "value": "left",
+                                "displayName": "Left"
+                            },
+                            {
+                                "value": "right",
+                                "displayName": "Right"
+                            }
+                        ]
+                    }
+                },
+                "menuWidth": {
+                    "displayName": "Menu Width (px)",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "backgroundColor": {
+                    "displayName": "Background Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "buttonColor": {
+                    "displayName": "Button Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "overlayOpacity": {
+                    "displayName": "Overlay Opacity (%)",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "filters"
+                    },
+                    "dataReductionAlgorithm": {
+                        "window": {
+                            "count": 30000
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "privileges": [
+        {
+            "name": "WebAccess",
+            "essential": false
+        }
+    ],
+    "supportsHighlight": true
+}
